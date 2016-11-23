@@ -1,0 +1,53 @@
+	<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css.css"/>
+	</head>
+	<body>
+		<div id="container" style="width:320px; height:220px;" >
+			<img src="images/n1.png" onclick="move(0);"/>
+			<img src="images/n2.png" onclick="move(1);"/>
+			<img src="images/n3.png" onclick="move(2);"/>
+			<img src="images/n4.png" onclick="move(3);"/>
+			<img src="images/n5.png" onclick="move(4);"/>
+			<img src="images/default.jpg" id="def"/>
+		</div>
+		
+		<style>
+		img
+		{
+			width:100px;
+			height:100px;
+		}
+		div
+		{
+			background-color:gray;
+			padding-left:9px;
+			padding-top:9px;
+		}
+		</style>
+		
+		
+	<script>
+		var img1=img2=img3=img4=img5=img6=0;
+		var arr = new Array(6);
+		var x = document.getElementById("def").src;
+		arr[0]="images/n1.jpg";
+		arr[1]="images/n2.jpg";
+		arr[2]="images/n3.jpg";
+		arr[3]="images/n4.jpg";
+		arr[4]="images/n5.jpg";
+		arr[5]="images/dafault.jpg";
+		alert(document.getElementById("def").src);
+		function move(obj)
+		{
+			alert(arr[5].src);
+			if(obj == 0 && document.getElementById("def").src==)
+		}
+		
+		
+		</script>	
+	</body>
+</html>

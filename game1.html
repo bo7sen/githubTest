@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+	</head>
+	<body oncontextmenu="return false">
+		<div id="container" style="width:100%">
+			<div style="float:left;width:40%;height:400px;">
+				<span>
+					<label>Choose difficulty:</label>
+					<br>
+					<label>Level 1</label><input type="radio" name="myradio" id="r1" checked />
+					<br>
+					<label>Level 2</label><input type="radio" name="myradio" id="r2"/>
+					<br>
+					<label>Level 3</label><input type="radio" name="myradio" id="r3"/>
+					<br>
+					<input type="button" value="Shuffle" onClick="Shuffle();"/>
+					<input type="button" value="Check" onClick="validate();"/>
+					<input type="button" value="Start" onClick="calc();"/>
+				</span>
+				<br>
+				<span id="timer">	
+					
+				</span>
+				<br>
+				<span>
+					<img src="images/i/full.jpg" style="width:300px;height:300px;margin-left:5px;margin-top:20px;"/>
+				</span>
+			</div>
+			<div id="content" style="width:770px;height:670px;">
+				<img src="images/i/1.jpg" class="img" id="img1" onClick="check(this);"/>
+				<img src="images/i/2.jpg" class="img" id="img2" onClick="check(this);"/>
+				<img src="images/i/3.jpg" class="img" id="img3" onClick="check(this);"/>
+				<img src="images/i/4.jpg" class="img" id="img4" onClick="check(this);"/>
+				<img src="images/i/5.jpg" class="img" id="img5" onClick="check(this);"/>
+				<img src="images/i/6.jpg" class="img" id="img6" onClick="check(this);"/>
+				<img src="images/i/7.jpg" class="img" id="img7" onClick="check(this);"/>
+				<img src="images/i/8.jpg" class="img" id="img8" onClick="check(this);"/>
+				<img src="images/i/9.jpg" class="img" id="img9" onClick="check(this);"/>
+				<img src="images/i/10.jpg" class="img" id="img10" onClick="check(this);"/>
+				<img src="images/i/11.jpg" class="img" id="img11" onClick="check(this);"/>
+				<img src="images/i/12.jpg" class="img" id="img12" onClick="check(this);"/>
+				<img src="images/i/13.jpg" class="img" id="img13" onClick="check(this);"/>
+				<img src="images/i/14.jpg" class="img" id="img14" onClick="check(this);"/>
+				<img src="images/i/15.jpg" class="img" id="img15" onClick="check(this);"/>
+				<img src="images/i/16.jpg" class="img" id="img16" onClick="check(this);"/>
+				<img src="images/i/17.jpg" class="img" id="img17" onClick="check(this);"/>
+				<img src="images/i/18.jpg" class="img" id="img18" onClick="check(this);"/>
+				<img src="images/i/19.jpg" class="img" id="img19" onClick="check(this);"/>
+				<img src="images/i/20.jpg" class="img" id="img20" onClick="check(this);"/>
+				<img src="images/i/21.jpg" class="img" id="img21" onClick="check(this);"/>
+				<img src="images/i/22.jpg" class="img" id="img22" onClick="check(this);"/>
+				<img src="images/i/23.jpg" class="img" id="img23" onClick="check(this);"/>
+				<img src="images/i/24.jpg" class="img" id="img24" onClick="check(this);"/>
+				<img src="images/i/25.jpg" class="img" id="img25" onClick="check(this);"/>
+				<img src="images/i/26.jpg" class="img" id="img26" onClick="check(this);"/>
+				<img src="images/i/27.jpg" class="img" id="img27" onClick="check(this);"/>
+				<img src="images/i/28.jpg" class="img" id="img28" onClick="check(this);"/>
+				<img src="images/i/29.jpg" class="img" id="img29" onClick="check(this);"/>
+				<img src="images/i/30.jpg" class="img" id="img30" onClick="check(this);"/>
+				<img src="images/i/31.jpg" class="img" id="img31" onClick="check(this);"/>
+				<img src="images/i/32.jpg" class="img" id="img32" onClick="check(this);"/>
+				<img src="images/i/33.jpg" class="img" id="img33" onClick="check(this);"/>
+				<img src="images/i/34.jpg" class="img" id="img34" onClick="check(this);"/>
+				<img src="images/i/35.jpg" class="img" id="img35" onClick="check(this);"/>
+				<img src="images/i/36.jpg" class="img" id="img36" onClick="check(this);"/>
+				<img src="images/i/37.jpg" class="img" id="img37" onClick="check(this);"/>
+				<img src="images/i/38.jpg" class="img" id="img38" onClick="check(this);"/>
+				<img src="images/i/39.jpg" class="img" id="img39" onClick="check(this);"/>
+				<img src="images/i/40.jpg" class="img" id="img40" onClick="check(this);"/>
+				<img src="images/i/41.jpg" class="img" id="img41" onClick="check(this);"/>
+				<img src="images/i/42.jpg" class="img" id="img42" onClick="check(this);" onmouseover="change(this);"/>
+			</div>	
+		</div>	
+	<style>
+		body
+		{
+			margin:0 auto;
+			font-family:"courier";
+		}
+		#content
+		{
+			float:left;	
+		}
+		.img
+		{
+			width:100px;
+			height:100px;
+		}
+		input[type='button']
+		{
+			border-radius:10px;
+			background-color:gray;
+			color:white;
+		}
+		</style>
+	<script>
+		var arr = new Array
+		(
+			"images/i/7.jpg","images/i/6.jpg","images/i/5.jpg","images/i/4.jpg","images/i/3.jpg",
+			"images/i/2.jpg","images/i/1.jpg","images/i/14.jpg","images/i/13.jpg","images/i/12.jpg",
+			"images/i/11.jpg","images/i/10.jpg","images/i/9.jpg","images/i/8.jpg","images/i/21.jpg",
+			"images/i/20.jpg","images/i/19.jpg","images/i/18.jpg","images/i/17.jpg","images/i/16.jpg",
+			"images/i/15.jpg","images/i/28.jpg","images/i/27.jpg","images/i/26.jpg","images/i/25.jpg",
+			"images/i/24.jpg","images/i/23.jpg","images/i/22.jpg","images/i/35.jpg","images/i/34.jpg",
+			"images/i/33.jpg","images/i/32.jpg","images/i/31.jpg","images/i/30.jpg","images/i/29.jpg",
+			"images/i/42.jpg","images/i/41.jpg","images/i/40.jpg","images/i/39.jpg","images/i/38.jpg",
+			"images/i/37.jpg","images/i/36.jpg"
+		);
+		
+		var arr4 = new Array
+		(
+			"images/i/24.jpg","images/i/23.jpg","images/i/22.jpg","images/i/35.jpg","images/i/34.jpg",
+			"images/i/42.jpg","images/i/41.jpg","images/i/40.jpg","images/i/39.jpg","images/i/38.jpg",
+			"images/i/33.jpg","images/i/32.jpg","images/i/31.jpg","images/i/30.jpg","images/i/29.jpg",
+			"images/i/2.jpg","images/i/1.jpg","images/i/14.jpg","images/i/13.jpg","images/i/12.jpg",
+			"images/i/11.jpg","images/i/10.jpg","images/i/9.jpg","images/i/8.jpg","images/i/21.jpg",
+			"images/i/20.jpg","images/i/19.jpg","images/i/18.jpg","images/i/17.jpg","images/i/16.jpg",
+			"images/i/15.jpg","images/i/28.jpg","images/i/27.jpg","images/i/26.jpg","images/i/25.jpg",
+			"images/i/7.jpg","images/i/6.jpg","images/i/5.jpg","images/i/4.jpg","images/i/3.jpg",
+			"images/i/37.jpg","images/i/36.jpg"
+		);
+	
+		var arr5 = new Array
+		(
+		"images/i/1.jpg","images/i/2.jpg","images/i/4.jpg","images/i/6.jpg","images/i/3.jpg","images/i/5.jpg",
+		"images/i/7.jpg","images/i/14.jpg","images/i/12.jpg","images/i/10.jpg","images/i/9.jpg","images/i/8.jpg",
+		"images/i/11.jpg","images/i/13.jpg","images/i/20.jpg","images/i/17.jpg","images/i/19.jpg","images/i/22.jpg",
+		"images/i/15.jpg","images/i/21.jpg","images/i/16.jpg","images/i/18.jpg","images/i/29.jpg","images/i/23.jpg",
+		"images/i/28.jpg","images/i/26.jpg","images/i/24.jpg","images/i/25.jpg","images/i/27.jpg","images/i/36.jpg",
+		"images/i/30.jpg","images/i/32.jpg","images/i/33.jpg","images/i/35.jpg","images/i/31.jpg","images/i/34.jpg",
+		"images/i/37.jpg","images/i/38.jpg","images/i/40.jpg","images/i/42.jpg","images/i/41.jpg","images/i/39.jpg"
+		);
+		
+		var arr2 = new Array();
+		arr2[0]="images/i/1.jpg";
+		arr2[1]="images/i/2.jpg";
+		arr2[2]="images/i/3.jpg";
+		arr2[3]="images/i/4.jpg";
+		arr2[4]="images/i/5.jpg";
+		arr2[5]="images/i/6.jpg";
+		arr2[6]="images/i/7.jpg";
+		arr2[7]="images/i/8.jpg";
+		arr2[8]="images/i/9.jpg";
+		arr2[9]="images/i/10.jpg";
+		arr2[10]="images/i/11.jpg";
+		arr2[11]="images/i/12.jpg";
+		arr2[12]="images/i/13.jpg";
+		arr2[13]="images/i/14.jpg";
+		arr2[14]="images/i/15.jpg";
+		arr2[15]="images/i/16.jpg";
+		arr2[16]="images/i/17.jpg";
+		arr2[17]="images/i/18.jpg";
+		arr2[18]="images/i/19.jpg";
+		arr2[19]="images/i/20.jpg";
+		arr2[20]="images/i/21.jpg";
+		arr2[21]="images/i/22.jpg";
+		arr2[22]="images/i/23.jpg";
+		arr2[23]="images/i/24.jpg";
+		arr2[24]="images/i/25.jpg";
+		arr2[25]="images/i/26.jpg";
+		arr2[26]="images/i/27.jpg";
+		arr2[27]="images/i/28.jpg";
+		arr2[28]="images/i/29.jpg";
+		arr2[29]="images/i/30.jpg";
+		arr2[30]="images/i/31.jpg";
+		arr2[31]="images/i/32.jpg";
+		arr2[32]="images/i/33.jpg";
+		arr2[33]="images/i/34.jpg";
+		arr2[34]="images/i/35.jpg";
+		arr2[35]="images/i/36.jpg";
+		arr2[36]="images/i/37.jpg";
+		arr2[37]="images/i/38.jpg";
+		arr2[38]="images/i/39.jpg";
+		arr2[39]="images/i/40.jpg";
+		arr2[40]="images/i/41.jpg";
+		arr2[41]="images/i/42.jpg";
+		var a =[1,5,4,6,3,2,7,14,12,10,9,8,11,13,20,17,19,22,15,21,16,18,29,23,28,26,24,25,27,36,30,32,33,35,31,34,37,38,40,42,41,39];
+		var count=0;
+		var c=0;
+		var t;
+		var counter=0;
+		var img1,img2,tmp,id1,id2;
+		var i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12,i13,i14,i15,i16,i17,i18,i19,i20,i21,i22,i23,i24,i25,i26,i27,i28,i29,i30,i31,i32,i33,i34,i35,i36,i37,i38,i39,i40,i41,i42;
+		function check(obj)
+		{
+			if(count==0)
+				{
+					count++;
+					img1 = obj.src;
+					obj.style.border="2px solid black";
+					id1=obj.id;
+				}else if(count==1)
+				{
+					obj.style.border="2px solid black";
+					id2=obj.id;
+					count++;
+					tmp=document.getElementById(id2).src;
+					document.getElementById(id2).src=document.getElementById(id1).src;
+					document.getElementById(id1).src=tmp; 
+					img1=tmp;
+				}
+				else
+				{
+				count=0;
+				document.getElementById(id1).style.border="none";
+				document.getElementById(id2).style.border="none";
+				}
+		}
+		/*function swap(var x,var y)
+		{
+			var temp=x;
+			x=y;
+			y=temp;
+		}*/
+		function validate()
+		{
+		var a;
+		if( document.getElementById("r1").checked == true)
+		{
+			for(var i=0,j=1;i<42;i++,j++)
+				{
+					var aa = document.getElementById("img"+j).src;
+					var x = unescape(aa).split("/")[7];
+					var y = unescape(aa).split("/")[8];
+					var z = unescape(aa).split("/")[9];
+					var res = x.concat("/"+y);
+					res = res.concat("/"+z);
+					alert(res);
+					if(res != arr2[i])
+						{
+							alert("Not yet");
+							a=0;
+							break;
+						}
+					else
+					{
+						continue;	
+						a=1;
+					}	
+				}
+			if(a!=0)
+			{
+				alert("Congrats You Finished in"+counter);
+				clearInterval(t);
+			}	
+		}	
+		}
+		function Shuffle()
+		{
+			if( document.getElementById("r1").checked == true)	
+			{
+				for(var i=0;i<42;i++)
+				{
+					var x = document.getElementsByClassName("img");
+					x[i].src=arr[i];
+				}
+			}
+			else if(document.getElementById("r2").checked == true)	
+			{
+				for(var i=0;i<42;i++)
+				{
+					var x = document.getElementsByClassName("img");
+					x[i].src=arr4[i];
+				}
+			}
+			else if(document.getElementById("r3").checked == true)	
+			{
+				for(var i=0;i<42;i++)
+				{
+					var x = document.getElementsByClassName("img");
+					x[i].src=arr5[i];
+				}
+			}
+			else
+			{
+				alert("Choose a level");	
+			}
+		}
+		function calc()
+		{
+			if(document.getElementById("r1").checked == true || document.getElementById("r2").checked == true || document.getElementById("r3").checked == true)
+				t=setInterval('timer()',1000);
+			else
+				alert("Choose Level");
+		}
+		function timer()
+		{
+			document.getElementById("timer").innerHTML="<br>"
+			document.getElementById("timer").innerHTML="Timer : "+counter++ + " Seconds ";
+		}
+		function change(obj)
+		{
+			//document.getElementById(obj.id).style.border="2px bold red";
+			//obj.style.height="102px;";
+		}
+		
+		document.onmousedown=disableclick;
+		status="Right Click Disabled";
+		function disableclick(event)
+		{
+		  if(event.button==2)
+		   {
+			 //alert(status);
+			 return false;    
+		   }
+		}
+	</script>
+	</body>
+</html>
